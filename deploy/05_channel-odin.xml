@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel-adaptor name="odin-channel"
+				 class="org.jpos.q2.iso.ChannelAdaptor"
+				 realm="channel-adaptor-odin-primary"
+				 logger="Q2">
+
+	<channel class="org.jpos.iso.channel.VAPChannel"
+			 name="odin-channel"
+			 realm="odin-channel"
+			 packager="org.jpos.iso.packager.GenericPackager"
+			 logger="Q2"
+			 type="client">
+
+		<property name="host" value="localhost"/>
+		<property name="port" value="7326"/>
+		<property name="timeout" value="360000"/>
+		<property name="packager-config" value="cfg/packager.xml"/>
+	</channel>
+
+	<in>adq-channel-send</in>
+	<out>adq-channel-receive</out>
+	<reconnect-delay>1000</reconnect-delay>
+</channel-adaptor>

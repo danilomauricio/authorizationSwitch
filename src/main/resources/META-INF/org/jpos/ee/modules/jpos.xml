@@ -1,0 +1,9 @@
+<module name="jpos">
+    <mappings>
+        <mapping class="Model.AccountEntity"/>
+        <mapping class="Model.CardEntity"/>
+        <mapping class="Model.ExternalCodeEntity"/>
+        <mapping class="Model.ResponseCodeEntity"/>
+        <mapping class="Model.TransactionDebit"/>
+    </mappings>
+</module>

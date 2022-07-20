@@ -1,0 +1,14 @@
+Model\ExternalCodeEntity.class
+Service\IsoConductorParticipante.class
+Model\CardEntity.class
+Utils\CheckFieldsTransaction.class
+Filter\IncomingFilter.class
+Filter\OutgoingFilter.class
+Model\ResponseCodeEntity.class
+Util\IsoUtil.class
+Model\AccountEntity.class
+Service\ResponceMessage.class
+Service\ServerDispacher.class
+Model\TransactionDebit.class
+Service\ValidaCartaParticipante.class
+Service\QueryHost.class

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mux class="org.jpos.q2.iso.QMUX" name="mux-odin" realm="mux-odin" logger="Q2">
+
+	<ready>adq-channel.ready</ready>
+	<in>adq-channel-receive</in>
+	<out>adq-channel-send</out>
+</mux>

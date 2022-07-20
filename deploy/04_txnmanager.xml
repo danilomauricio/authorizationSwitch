@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<txnmgr realm="txnmgr-main" name="txnmgr-main" class="org.jpos.transaction.TransactionManager" logger="Q2" xmlns="">
+
+	<property name="queue" value="MAIN.QUEUE"/>
+	<property name="sessions" value="2"/>
+	<property name="max-sessions" value="500"/>
+	<property name="call-selector-on-abort" value="true"/>
+	<property name="debug" value="true"/>
+	<property name="debug-context" value="true"/>
+
+	<!--<participant class="org.jpos.transaction.Open" logger="Q2" realm="open"/>
+	<participant class="Service.ValidaCartaParticipante" logger="Q2" realm="ValidaCartaParticipante"/>
+	<participant class="Validation.ValidarCard" logger="Q2" realm="ValidarCard"/>-->
+	<participant class="Service.IsoConductorParticipante" logger="Q2" realm="IsoConductorParticipante"/>
+	<participant class="Service.QueryHost" logger="Q2" realm="QueryHost"/>
+	<participant class="Service.ResponceMessage" logger="Q2" realm="ResponceMessage"/>
+	<participant class="org.jpos.transaction.Close" logger="Q2" realm="close"/>
+
+
+</txnmgr>

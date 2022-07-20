@@ -1,0 +1,79 @@
+<assembly
+		xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+
+	<id>tar.gz</id>
+
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+
+	<baseDirectory>${project.artifactId}</baseDirectory>
+
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<includeSiteDirectory>false</includeSiteDirectory>
+
+	<fileSets>
+		<fileSet>
+			<directory>src/dist/bin</directory>
+			<outputDirectory>bin</outputDirectory>
+			<directoryMode>0770</directoryMode>
+			<fileMode>0770</fileMode>
+			<includes>
+				<include>*.sh</include>
+			</includes>
+		</fileSet>
+
+		<fileSet>
+			<directory>src/dist/cfg</directory>
+			<outputDirectory>cfg</outputDirectory>
+			<directoryMode>0770</directoryMode>
+			<fileMode>0770</fileMode>
+			<includes>
+				<include>*.xml</include>
+			</includes>
+		</fileSet>
+
+		<fileSet>
+			<directory>src/dist/deploy</directory>
+			<outputDirectory>deploy</outputDirectory>
+			<directoryMode>0770</directoryMode>
+			<fileMode>0770</fileMode>
+			<includes>
+				<include>*.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>src/dist/log</directory>
+			<outputDirectory>log</outputDirectory>
+			<directoryMode>0770</directoryMode>
+			<fileMode>0770</fileMode>
+		</fileSet>
+	</fileSets>
+
+	<files>
+		<file>
+			<source>src/dist/bin/start.sh</source>
+			<outputDirectory>bin</outputDirectory>
+			<filtered>true</filtered>
+		</file>
+
+		<file>
+			<source>${project.build.directory}/${project.artifactId}-${project.version}.jar</source>
+			<outputDirectory/>
+		</file>
+	</files>
+
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<directoryMode>0770</directoryMode>
+			<fileMode>0440</fileMode>
+			<excludes>
+				<exclude>${project.groupId}:${project.artifactId}:jar:*</exclude>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+
+</assembly>

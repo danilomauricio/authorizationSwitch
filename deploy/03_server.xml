@@ -1,0 +1,27 @@
+<server class="org.jpos.q2.iso.QServer"
+		logger="Q2"
+		name="server"
+		realm="server">
+
+	<attr name="port" type="java.lang.Integer">8989</attr>
+
+	<channel name="adq-channel-05"
+			 class="org.jpos.iso.channel.VAPChannel"
+			 packager="org.jpos.iso.packager.GenericPackager"
+			 type="server"
+			 logger="Q2"
+			 realm="adq-channel-05">
+
+		<property name="packager-config" value="cfg/base1_2010.xml"/>
+		<property name="packager-realm" value="packager-server"/>
+		<property name="timeout" value="600000"/>
+
+		<!--<filter class="Filter.IncomingFilter" direction="incomming"/>
+		<filter class="Filter.OutgoingFilter" direction="outgoing"/>-->
+	</channel>
+
+	<request-listener class="Service.ServerDispacher"
+					  logger="Q2"
+					  realm="ServerDispacher"/>
+
+</server>
