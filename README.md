@@ -1,0 +1,2 @@
+# authorizationSwitch
+Switch de transações 
